@@ -11,7 +11,7 @@
 	"dependencies": {
 		"cors": "^2.8.5",
 		"express": "^5.2.1",
-		"ghost-field": "github:itc-s24004/ghost-field",
+		"ghost-field": "file:../ghost-field",
 		"js-type-val": "github:itc-s24004/js-type-val",
 		"socket.io": "^4.8.1"
 	},

@@ -1,5 +1,5 @@
 import { app, io, server } from "./server/server.js";
-import { GhostField_Server, GhostFieldCore } from "ghost-field";
+import { GhostField_Server, GhostFieldCore, type GhostField_Socket } from "ghost-field";
 
 import cards from "../cards.json" with { type: "json" };
 
@@ -36,7 +36,7 @@ function createRoom(id: string | undefined, data: GhostFieldCore.GF_Initial_Game
     if (!/^[a-zA-Z0-9-]{1,36}$/.test(id)) {
         throw new Error("部屋IDは英数字とハイフンのみの36文字以下である必要があります");
     }
-    const socket = io.of(`/${id}`);
+    const socket = io.of(`/${id}`) as unknown as GhostField_Socket<{}, {}>;
     
     const server = new GhostField_Server(socket, data, {
         autoClose: !devRoom,
