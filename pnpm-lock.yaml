@@ -15,8 +15,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1
       ghost-field:
-        specifier: file:../ghost-field
-        version: file:../ghost-field
+        specifier: github:itc-s24004/ghost-field
+        version: https://codeload.github.com/itc-s24004/ghost-field/tar.gz/0a71d8a88bbfa3a32e41dadc77ee6b3ae13a48ca
       js-type-val:
         specifier: github:itc-s24004/js-type-val
         version: https://codeload.github.com/itc-s24004/js-type-val/tar.gz/5da3ef605ab70ce882a04d0e2fb052b1db4a45be
@@ -204,8 +204,13 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
-  ghost-field@file:../ghost-field:
-    resolution: {directory: ../ghost-field, type: directory}
+  ghost-field-core@https://codeload.github.com/itc-s24004/ghost-field-core/tar.gz/b9474e5f3b49704bbe35c9a300e34b53b259337e:
+    resolution: {tarball: https://codeload.github.com/itc-s24004/ghost-field-core/tar.gz/b9474e5f3b49704bbe35c9a300e34b53b259337e}
+    version: 0.1.5
+
+  ghost-field@https://codeload.github.com/itc-s24004/ghost-field/tar.gz/0a71d8a88bbfa3a32e41dadc77ee6b3ae13a48ca:
+    resolution: {tarball: https://codeload.github.com/itc-s24004/ghost-field/tar.gz/0a71d8a88bbfa3a32e41dadc77ee6b3ae13a48ca}
+    version: 0.0.0
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -640,9 +645,11 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
-  ghost-field@file:../ghost-field:
+  ghost-field-core@https://codeload.github.com/itc-s24004/ghost-field-core/tar.gz/b9474e5f3b49704bbe35c9a300e34b53b259337e: {}
+
+  ghost-field@https://codeload.github.com/itc-s24004/ghost-field/tar.gz/0a71d8a88bbfa3a32e41dadc77ee6b3ae13a48ca:
     dependencies:
-      ghost-field-core: link:../ghost-field-core
+      ghost-field-core: https://codeload.github.com/itc-s24004/ghost-field-core/tar.gz/b9474e5f3b49704bbe35c9a300e34b53b259337e
       socket.io-client: 4.8.3
     transitivePeerDependencies:
       - bufferutil
