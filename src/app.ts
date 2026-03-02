@@ -1,12 +1,12 @@
 import { app, io, server } from "./server/server.js";
-import { GhostField_Server, GhostFieldCore } from "ghost-field"
+import { GhostField_Server, GhostFieldCore } from "ghost-field";
 
 import cards from "../cards.json" with { type: "json" };
 
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT,() =>  {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`サーバーがポート ${PORT} で起動しました`);
 });
 
 
@@ -40,7 +40,7 @@ function createRoom(id: string | undefined, data: GhostFieldCore.GF_Initial_Game
     
     const server = new GhostField_Server(socket, data, {
         autoClose: !devRoom,
-        timeout: devRoom ? undefined : 1000 * 60, // 60秒
+        timeout: devRoom ? Infinity : 1000 * 60, // 60秒
         onClose: () =>  {
             const index = serverRooms.findIndex(r => r.id === id);
             if (index !== -1) {
@@ -50,7 +50,7 @@ function createRoom(id: string | undefined, data: GhostFieldCore.GF_Initial_Game
             console.log(`ルーム ${id} が閉じられました`);
         }
     });
-    console.log("ルームが作成されました: ", id);
+    console.log(`ルームが作成されました: ${id}`);
 
     serverRooms.push({
         id,
